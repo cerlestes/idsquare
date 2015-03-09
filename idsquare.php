@@ -92,7 +92,34 @@ class IdSquare {
 	 * @return void
 	 */
 	public function setColors($colors) {
-		$this->colors = ($colors) ?: array(0xFFFFFF, 0xD24D57, 0xF22613, 0xD91E18, 0x96281B, 0xEF4836, 0xD64541, 0xC0392B, 0xCF000F, 0xE74C3C, 0xDB0A5B, 0xF64747, 0xD2527F, 0xE08283, 0xF62459, 0xE26A6A, 0x663399, 0x674172, 0xAEA8D3, 0x913D88, 0x9A12B3, 0xBF55EC, 0xBE90D4, 0x8E44AD, 0x9B59B6, 0xE4F1FE, 0x4183D7, 0x59ABE3, 0x81CFE0, 0x52B3D9, 0xC5EFF7, 0x22A7F0, 0x3498DB, 0x2C3E50, 0x19B5FE, 0x336E7B, 0x22313F, 0x6BB9F0, 0x1E8BC3, 0x3A539B, 0x34495E, 0x67809F, 0x2574A9, 0x1F3A93, 0x89C4F4, 0x4B77BE, 0x5C97BF, 0xA2DED0, 0x87D37C, 0x90C695, 0x26A65B, 0x03C9A9, 0x68C3A3, 0x65C6BB, 0x1BBC9B, 0x1BA39C, 0x66CC99, 0x36D7B7, 0xC8F7C5, 0x86E2D5, 0x2ECC71, 0x16a085, 0x3FC380, 0x019875, 0x03A678, 0x4DAF7C, 0x2ABB9B, 0x00B16A, 0x1E824C, 0x049372, 0x26C281, 0xFDE3A7, 0xF89406, 0xEB9532, 0xE87E04, 0xF4B350, 0xF2784B, 0xEB974E, 0xF5AB35, 0xD35400, 0xF39C12, 0xF9690E, 0xF9BF3B, 0xF27935, 0xE67E22, 0xECECEC, 0x6C7A89, 0xBDC3C7, 0xECF0F1, 0x95A5A6, 0xDADFE1, 0xABB7B7, 0xF2F1EF);
+		$this->colors = ($colors) ?: array(
+			array(0x69D2E7, 0xA7DBD8, 0xE0E4CC, 0xF38630, 0xFA6900),
+			array(0xE94C6F, 0x542733, 0x5A6A62, 0xC6D5CD, 0xFDF200),
+			array(0xDB3340, 0xE8B71A, 0xF7EAC8, 0x1FDA9A, 0x28ABE3),
+			array(0x588C73, 0xF2E394, 0xF2AE72, 0xD96459, 0x8C4646),
+			array(0xD0C91F, 0x85C4B9, 0x008BBA, 0xDF514C, 0xA82F2D),
+			array(0x00B3DB, 0x59C4C5, 0xFFC33C, 0xFBE2B4, 0xFF4C65),
+			array(0x5E412F, 0xFCEBB6, 0x78C0A8, 0xF07818, 0xF0A830),
+			array(0xB1EB00, 0x53BBF4, 0xFF85CB, 0xFF432E, 0xFFAC00),
+			array(0x4298B5, 0xADC4CC, 0x92B06A, 0xE19D29, 0xDD5F32),
+			array(0xBCCF02, 0x5BB12F, 0x73C5E1, 0x9B539C, 0xEB65A0),
+			array(0xFFA200, 0x00A03E, 0x24A8AC, 0x0087CB, 0x982395),
+			array(0x260126, 0x59323C, 0xF2EEB3, 0xBFAF80, 0x8C6954),
+			array(0x3B3A35, 0x20457C, 0x5E3448, 0xFB6648, 0xECDFBD),
+			array(0xE45F56, 0xA3D39C, 0x7ACCC8, 0x4AAAA5, 0x35404F),
+			array(0x83AA30, 0x1499D3, 0x4D6684, 0x3D3D3D, 0xE74700),
+			array(0xCFF09E, 0xA8DBA8, 0x79BD9A, 0x3B8686, 0x0B486B),
+			array(0x774F38, 0xE08E79, 0xF1D4AF, 0xECE5CE, 0xC5E0DC),
+			array(0xE8DDCB, 0xCDB380, 0x036564, 0x033649, 0x031634),
+			array(0x490A3D, 0xBD1550, 0xE97F02, 0xF8CA00, 0x8A9B0F),
+			array(0x00A0B0, 0x6A4A3C, 0xCC333F, 0xEB6841, 0xEDC951),
+			array(0xD9CEB2, 0x948C75, 0xD5DED9, 0x7A6A53, 0x99B2B7),
+			array(0x343838, 0x005F6B, 0x008C9E, 0x00B4CC, 0x00DFFC),
+			array(0x99B898, 0xFECEA8, 0xFF847C, 0xE84A5F, 0x2A363B),
+			array(0x413E4A, 0x73626E, 0xB38184, 0xF0B49E, 0xF7E4BE),
+			array(0x554236, 0xF77825, 0xD3CE3D, 0xF1EFA5, 0x60B99A),
+			array(0xFF4E50, 0xFC913A, 0xF9D423, 0xEDE574, 0xE1F5C4)
+		);
 	}
 
 
@@ -110,49 +137,37 @@ class IdSquare {
 
 		$hash = $this->getHash();
 		$colors = $this->getColors();
-		$colorsCount = count($colors);
-		$sizeInteral = ($size * 2);
 
 		if(!$hash || count($hash) != 20) {
 			throw new Exception("IdSquare::generate(): The hash property must be exactly 20 bytes long!", 1425905694);
 		}
 
-		if(!$colors || count($colors) < 9) {
-			throw new Exception("IdSquare::generate(): The colors property must contain at least 9 colors!", 1425905738);
+		if(!$colors || !count($colors)) {
+			throw new Exception("IdSquare::generate(): The colors property must contain at least one palette of colors!", 1425905738);
 		}
 
-		// Read config from hash
-		$cfgColors = array_slice($hash, 0, 9);
-		$cfgSquares = 2;
-		$cfgAngle = 5;
+		// Pick a random color palette, reduce it to 4 colors and shuffle it
+		$colors = $colors[ $hash[0] % count($colors) ];
+		$colors = array_slice($colors, max(0, (($hash[1] % count($colors)) - 4)), 4);
+		$hashSlice = array_slice($hash, 2, 4);
+		array_multisort($hashSlice, $colors);
 
-		// Make sure colors are unique
-		foreach($cfgColors as $i => $value) {
-			$color = ($cfgColors[$i] % $colorsCount);
-
-			while(in_array($color, $cfgColors)) {
-				$color = (($color + 1) % $colorsCount);
-			}
-
-			$cfgColors[$i] = $color;
-		}
-
-		// Create our image resource
-		$image = @imagecreatetruecolor($sizeInteral, $sizeInteral);
+		// Create image resource
+		$image = @imagecreatetruecolor(($size * 2), ($size * 2));
 
 		if(!$image || !is_resource($image)) {
 			throw new Exception("IdSquare::generate(): GDlib returned bad value! Is GDlib correctly installed and available?", 1425901398);
 		}
 
-		// Draw the image
-		for($ih = 0; $ih < $cfgSquares; $ih++) {
-			for($iv = 0; $iv < $cfgSquares; $iv++) {
+		// Draw the squares onto the image
+		for($ih = 0; $ih < 2; $ih++) {
+			for($iv = 0; $iv < 2; $iv++) {
 				
-				$left = floor($ih * ($sizeInteral / $cfgSquares));
-				$right = floor(($ih + 1) * ($sizeInteral / $cfgSquares));
-				$top = floor($iv * ($sizeInteral / $cfgSquares));
-				$bottom = floor(($iv + 1) * ($sizeInteral / $cfgSquares));
-				$color = $colors[ $cfgColors[ ($iv * 3 + $ih) ] ];
+				$color = $colors[ ($iv * 2 + $ih) ];
+				$left = floor($ih * $size);
+				$right = floor(($ih + 1) * $size);
+				$top = floor($iv * $size);
+				$bottom = floor(($iv + 1) * $size);
 
 				$allocated = imagecolorallocate($image, ($color >> 16 & 0xFF), ($color >> 8 & 0xFF), ($color & 0xFF));
 				imagefilledrectangle($image, $left, $top, $right, $bottom, $allocated);
@@ -160,13 +175,14 @@ class IdSquare {
 			}
 		}
 
-		// Rotate the image
-		$image = imagerotate($image, $cfgAngle, 0);
+		// Rotate the image randomly first, then in a nice angle
+		$image = imagerotate($image, (($hash[10] % 4) * 90), 0);
+		$image = imagerotate($image, 5, 0);
 
 		// Crop out the area that we want
-		$padding = ($sizeInteral / 10);
+		$padding = ($size / 5);
 		$output = imagecreatetruecolor($size, $size);
-		imagecopyresampled($output, $image, 0, 0, $padding, $padding, $size, $size, ($sizeInteral - $padding), ($sizeInteral - $padding));
+		imagecopyresampled($output, $image, 0, 0, $padding, $padding, $size, $size, (($size * 2) - $padding), (($size * 2) - $padding));
 
 		return $output;
 	}
