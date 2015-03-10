@@ -244,14 +244,20 @@ class IdSquare {
 }
 
 /**
- * @FIXME
+ * Functional way to create an identicon for the given string
+ * 
+ * @param  int $size  The identicon's width and height in pixels
+ * @return resource
  */
 function generate($subject, $size = 128) {
 	return (new IdSquare($subject))->generate($size);
 }
 
 /**
- * @FIXME
+ * Functional way to create an identicon for the given string and output it directly (incl. setting up headers)
+ * 
+ * @param  int $size  The identicon's width and height in pixels
+ * @return void
  */
 function output($subject, $size = 128) {
 	(new IdSquare($subject))->generateAndOutput($size);
