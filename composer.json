@@ -1,0 +1,17 @@
+{
+	"name": "cerlestes/idsquare",
+	"type": "library",
+	"description": " idsquare is a small and easy-to-use library that creates identicons (unique images used for identification) from simple squares with beautiful colors. ",
+	"keywords": ["idsquare","identicon","identify","identification","user","email","address","uuid"],
+	"homepage": "https://github.com/cerlestes/idsquare",
+	"license": "MIT",
+	"require": {
+        "php": "5.*",
+        "ext-gd": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Cerlestes\\IdSquare": ""
+		}
+	}
+}
