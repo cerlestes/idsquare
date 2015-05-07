@@ -10,8 +10,8 @@
         "ext-gd": "*"
 	},
 	"autoload": {
-		"psr-0": {
-			"Cerlestes\\IdSquare": ""
-		}
+		"classmap": [
+			"idsquare.php"
+		]
 	}
 }
