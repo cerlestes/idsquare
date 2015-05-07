@@ -227,18 +227,41 @@ class IdSquare {
 	}
 
 	/**
-	 * Generates an identicon for the given string and outputs it directly (incl. setting up headers)
+	 * Generates an identicon for the given string and outputs it directly
 	 * 
-	 * @param  int $size  The identicon's width and height in pixels
+	 * @param  boolean $setContentTypeHeader  Whether or not to also set the "Content-Type" header to "image/png"
+	 * @param  int     $size                  The identicon's width and height in pixels
 	 * @return void
 	 */
-	public function generateAndOutput($size = 128) {
+	public function generateAndOutput($setContentTypeHeader = true, $size = 128) {
 		$image = $this->generate($size);
 
-		header('Content-Type: image/png');
+		if ($setContentTypeHeader) {
+			header('Content-Type: image/png');
+		}
 
 		imagepng($image);
 		imagedestroy($image);
+	}
+
+	/**
+	 * Generates an identicon for the given string and returns its Base64 representation
+	 * 
+	 * @param  boolean $asDataUrl  Whether or not to wrap the Base64 string in a "data:" scheme
+	 * @param  int     $size       The identicon's width and height in pixels
+	 * @return string
+	 */
+	public function generateAsBase64($asDataUrl = true, $size = 128) {
+		ob_start();
+		$this->generateAndOutput(false, $size);
+		$image = ob_get_contents();
+		ob_end_clean();
+
+		if ($asDataUrl) {
+			return "data:image/png;base64," . base64_encode($image);
+		} else {
+			return base64_encode($image);
+		}
 	}
 
 }
@@ -254,11 +277,11 @@ function generate($subject, $size = 128) {
 }
 
 /**
- * Functional way to create an identicon for the given string and output it directly (incl. setting up headers)
+ * Functional way to create an identicon for the given string and output it directly (incl. setting up the Content-Type HTTP header)
  * 
  * @param  int $size  The identicon's width and height in pixels
  * @return void
  */
 function output($subject, $size = 128) {
-	(new IdSquare($subject))->generateAndOutput($size);
+	(new IdSquare($subject))->generateAndOutput(true, $size);
 }
